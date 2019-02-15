@@ -166,7 +166,7 @@
       }
     },
     {
-	  "apiVersion": "2018-10-01",
+      "apiVersion": "2018-10-01",
       "type": "Microsoft.Network/networkInterfaces",
       "name": "[variables('nicName2')]",
       "location": "[parameters('location')]",
