@@ -114,7 +114,7 @@
       "properties": {
         "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
         "dnsSettings": {
-          "domainNameLabel": "[concat(parameters('dnsLabelPrefix'),2]"
+          "domainNameLabel": "[concat(parameters('dnsLabelPrefix'),2)]"
         }
       }
     },
