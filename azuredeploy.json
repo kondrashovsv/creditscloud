@@ -69,9 +69,9 @@
     "publicIPAddressName1": "myPublicIP1",
     "publicIPAddressName2": "myPublicIP2",
     "publicIPAddressName3": "myPublicIP3",
-	"publicIPAddressName4": "myPublicIP4",
-	"publicIPAddressName5": "myPublicIP5",
-	"publicIPAddressName6": "myPublicIP6",
+    "publicIPAddressName4": "myPublicIP4",
+    "publicIPAddressName5": "myPublicIP5",
+    "publicIPAddressName6": "myPublicIP6",
     "publicIPAddressType": "Dynamic",
     "vmName1": "MySignal1",
     "vmName2": "MyNode1",
@@ -133,7 +133,7 @@
     {
       "apiVersion": "2018-10-01",
       "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('publicIPAddressName2')]",
+      "name": "[variables('publicIPAddressName3')]",
       "location": "[parameters('location')]",
       "properties": {
         "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
@@ -145,7 +145,7 @@
     {
       "apiVersion": "2018-10-01",
       "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('publicIPAddressName2')]",
+      "name": "[variables('publicIPAddressName4')]",
       "location": "[parameters('location')]",
       "properties": {
         "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
@@ -157,7 +157,7 @@
     {
       "apiVersion": "2018-10-01",
       "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('publicIPAddressName2')]",
+      "name": "[variables('publicIPAddressName5')]",
       "location": "[parameters('location')]",
       "properties": {
         "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
@@ -169,7 +169,7 @@
     {
       "apiVersion": "2018-10-01",
       "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('publicIPAddressName2')]",
+      "name": "[variables('publicIPAddressName6')]",
       "location": "[parameters('location')]",
       "properties": {
         "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
