@@ -66,7 +66,7 @@
 	"publicIPAddressName2": "myPublicIP2",
     "publicIPAddressType": "Dynamic",
     "vmName1": "MyUbuntuVM1",
-	"vmName2": "MyUbuntuVM2",
+    "vmName2": "MyUbuntuVM2",
     "vmSize": "Standard_A1",
     "virtualNetworkName": "MyVNET",
     "linuxConfiguration": {
@@ -168,7 +168,7 @@
     {
       "apiVersion": "2018-10-01",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[variables('vmName')]",
+      "name": "[variables('vmName1')]",
       "location": "[parameters('location')]",
       "dependsOn": [
         "[resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
@@ -179,7 +179,7 @@
           "vmSize": "[variables('vmSize')]"
         },
         "osProfile": {
-          "computerName": "[variables('vmName')]",
+          "computerName": "[variables('vmName1')]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPasswordOrKey')]",
           "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), json('null'), variables('linuxConfiguration'))]"
