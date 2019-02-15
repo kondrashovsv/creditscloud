@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "value": "GEN-UNIQUE"
+    },
+    "adminPasswordOrKey": {
+      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAk5iDYqRPrcmnK9wN0aD18gUqdynCJtXnF03WxiHkFG6jNru4BY4oFSdVvfv4R5AYW99ZbQJ8sPgbU70mglNX6XSmxTm9IGK84IS7kPv9uuWM/y5v9GxYgj9w8nTGGgtbm1PYNw2qSEBmCOiKud5r5dktKcgg6KB8iWZe0Ve8lEI83Lxe7X7Mh6/r7GZ3x/2+jj9O9ez3527RKRwwKJrTHaS7GRnhsUnflkRgSU73txJ1gvxistrmzmjZzP96+XqPj0HMEdZO6e6SS8zVYSRIEtFtPGl3pbi5B0R2+uxBz3s6xCXMnwBqRxd25sV1eW9j+V51U6f5chENPa6ZsoKK7Q== rsa-key-20190116"
+    },
+    "dnsLabelPrefix": {
+      "value": "GEN-UNIQUE"
+    }
+  }
+}
