@@ -58,16 +58,28 @@
     "imageOffer": "UbuntuServer",
     "nicName1": "myVMNic1",
     "nicName2": "myVMNic2",
+	"nicName3": "myVMNic3",
+    "nicName4": "myVMNic4",
+	"nicName5": "myVMNic5",
+    "nicName6": "myVMNic6",
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
     "storageAccountType": "Standard_LRS",
     "publicIPAddressName1": "myPublicIP1",
     "publicIPAddressName2": "myPublicIP2",
+    "publicIPAddressName3": "myPublicIP3",
+	"publicIPAddressName4": "myPublicIP4",
+	"publicIPAddressName5": "myPublicIP5",
+	"publicIPAddressName6": "myPublicIP6",
     "publicIPAddressType": "Dynamic",
-    "vmName1": "MyUbuntuVM1",
-    "vmName2": "MyUbuntuVM2",
-    "vmSize": "Standard_A1",
+    "vmName1": "MySignal1",
+    "vmName2": "MyNode1",
+    "vmName3": "MyNode2",
+    "vmName4": "MyNode3",
+    "vmName5": "MyNode4",
+    "vmName6": "MyNode5",	
+    "vmSize": "Standard_B1s",
     "virtualNetworkName": "MyVNET",
     "linuxConfiguration": {
       "disablePasswordAuthentication": true,
@@ -115,6 +127,54 @@
         "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
         "dnsSettings": {
           "domainNameLabel": "[concat(parameters('dnsLabelPrefix'),2)]"
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-10-01",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[variables('publicIPAddressName2')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
+        "dnsSettings": {
+          "domainNameLabel": "[concat(parameters('dnsLabelPrefix'),3)]"
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-10-01",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[variables('publicIPAddressName2')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
+        "dnsSettings": {
+          "domainNameLabel": "[concat(parameters('dnsLabelPrefix'),4)]"
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-10-01",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[variables('publicIPAddressName2')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
+        "dnsSettings": {
+          "domainNameLabel": "[concat(parameters('dnsLabelPrefix'),5)]"
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-10-01",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[variables('publicIPAddressName2')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
+        "dnsSettings": {
+          "domainNameLabel": "[concat(parameters('dnsLabelPrefix'),6)]"
         }
       }
     },
@@ -182,6 +242,110 @@
               "privateIPAllocationMethod": "Dynamic",
               "publicIPAddress": {
                 "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName2'))]"
+              },
+              "subnet": {
+                "id": "[variables('subnetRef')]"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "2018-10-01",
+      "type": "Microsoft.Network/networkInterfaces",
+      "name": "[variables('nicName3')]",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName3'))]",
+        "[resourceId('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+      ],
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName3'))]"
+              },
+              "subnet": {
+                "id": "[variables('subnetRef')]"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "2018-10-01",
+      "type": "Microsoft.Network/networkInterfaces",
+      "name": "[variables('nicName4')]",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName4'))]",
+        "[resourceId('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+      ],
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName4'))]"
+              },
+              "subnet": {
+                "id": "[variables('subnetRef')]"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "2018-10-01",
+      "type": "Microsoft.Network/networkInterfaces",
+      "name": "[variables('nicName5')]",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName5'))]",
+        "[resourceId('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+      ],
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName5'))]"
+              },
+              "subnet": {
+                "id": "[variables('subnetRef')]"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "2018-10-01",
+      "type": "Microsoft.Network/networkInterfaces",
+      "name": "[variables('nicName6')]",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName6'))]",
+        "[resourceId('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+      ],
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName6'))]"
               },
               "subnet": {
                 "id": "[variables('subnetRef')]"
@@ -284,6 +448,214 @@
           "networkInterfaces": [
             {
               "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName1'))]"
+            }
+          ]
+        },
+        "diagnosticsProfile": {
+          "bootDiagnostics": {
+            "enabled": true,
+            "storageUri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName')), '2016-01-01').primaryEndpoints.blob)]"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-10-01",
+      "type": "Microsoft.Compute/virtualMachines",
+      "name": "[variables('vmName3')]",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
+        "[resourceId('Microsoft.Network/networkInterfaces/', variables('nicName3'))]"
+      ],
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "[variables('vmSize')]"
+        },
+        "osProfile": {
+          "computerName": "[variables('vmName3')]",
+          "adminUsername": "[parameters('adminUsername')]",
+          "adminPassword": "[parameters('adminPasswordOrKey')]",
+          "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), json('null'), variables('linuxConfiguration'))]"
+        },
+        "storageProfile": {
+          "imageReference": {
+            "publisher": "[variables('imagePublisher')]",
+            "offer": "[variables('imageOffer')]",
+            "sku": "[parameters('ubuntuOSVersion')]",
+            "version": "latest"
+          },
+          "osDisk": {
+            "createOption": "FromImage"
+          },
+          "dataDisks": [
+            {
+              "diskSizeGB": 1023,
+              "lun": 0,
+              "createOption": "Empty"
+            }
+          ]
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName3'))]"
+            }
+          ]
+        },
+        "diagnosticsProfile": {
+          "bootDiagnostics": {
+            "enabled": true,
+            "storageUri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName')), '2016-01-01').primaryEndpoints.blob)]"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-10-01",
+      "type": "Microsoft.Compute/virtualMachines",
+      "name": "[variables('vmName4')]",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
+        "[resourceId('Microsoft.Network/networkInterfaces/', variables('nicName4'))]"
+      ],
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "[variables('vmSize')]"
+        },
+        "osProfile": {
+          "computerName": "[variables('vmName4')]",
+          "adminUsername": "[parameters('adminUsername')]",
+          "adminPassword": "[parameters('adminPasswordOrKey')]",
+          "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), json('null'), variables('linuxConfiguration'))]"
+        },
+        "storageProfile": {
+          "imageReference": {
+            "publisher": "[variables('imagePublisher')]",
+            "offer": "[variables('imageOffer')]",
+            "sku": "[parameters('ubuntuOSVersion')]",
+            "version": "latest"
+          },
+          "osDisk": {
+            "createOption": "FromImage"
+          },
+          "dataDisks": [
+            {
+              "diskSizeGB": 1023,
+              "lun": 0,
+              "createOption": "Empty"
+            }
+          ]
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName4'))]"
+            }
+          ]
+        },
+        "diagnosticsProfile": {
+          "bootDiagnostics": {
+            "enabled": true,
+            "storageUri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName')), '2016-01-01').primaryEndpoints.blob)]"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-10-01",
+      "type": "Microsoft.Compute/virtualMachines",
+      "name": "[variables('vmName5')]",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
+        "[resourceId('Microsoft.Network/networkInterfaces/', variables('nicName5'))]"
+      ],
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "[variables('vmSize')]"
+        },
+        "osProfile": {
+          "computerName": "[variables('vmName5')]",
+          "adminUsername": "[parameters('adminUsername')]",
+          "adminPassword": "[parameters('adminPasswordOrKey')]",
+          "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), json('null'), variables('linuxConfiguration'))]"
+        },
+        "storageProfile": {
+          "imageReference": {
+            "publisher": "[variables('imagePublisher')]",
+            "offer": "[variables('imageOffer')]",
+            "sku": "[parameters('ubuntuOSVersion')]",
+            "version": "latest"
+          },
+          "osDisk": {
+            "createOption": "FromImage"
+          },
+          "dataDisks": [
+            {
+              "diskSizeGB": 1023,
+              "lun": 0,
+              "createOption": "Empty"
+            }
+          ]
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName5'))]"
+            }
+          ]
+        },
+        "diagnosticsProfile": {
+          "bootDiagnostics": {
+            "enabled": true,
+            "storageUri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName')), '2016-01-01').primaryEndpoints.blob)]"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "2018-10-01",
+      "type": "Microsoft.Compute/virtualMachines",
+      "name": "[variables('vmName6')]",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
+        "[resourceId('Microsoft.Network/networkInterfaces/', variables('nicName6'))]"
+      ],
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "[variables('vmSize')]"
+        },
+        "osProfile": {
+          "computerName": "[variables('vmName6')]",
+          "adminUsername": "[parameters('adminUsername')]",
+          "adminPassword": "[parameters('adminPasswordOrKey')]",
+          "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), json('null'), variables('linuxConfiguration'))]"
+        },
+        "storageProfile": {
+          "imageReference": {
+            "publisher": "[variables('imagePublisher')]",
+            "offer": "[variables('imageOffer')]",
+            "sku": "[parameters('ubuntuOSVersion')]",
+            "version": "latest"
+          },
+          "osDisk": {
+            "createOption": "FromImage"
+          },
+          "dataDisks": [
+            {
+              "diskSizeGB": 1023,
+              "lun": 0,
+              "createOption": "Empty"
+            }
+          ]
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName6'))]"
             }
           ]
         },
