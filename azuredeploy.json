@@ -477,11 +477,11 @@
             "autoUpgradeMinorVersion": true,
             "settings": {
               "fileUris": [
-                "https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-linux/scripts/config-music.sh"
+                "https://raw.githubusercontent.com/kondrashovsv/creditscloud/master/script.sh"
               ]
             },
             "protectedSettings": {
-              "commandToExecute": "sudo sh config-music.sh"
+              "commandToExecute": "sudo sh script.sh"
             }
           }
         }
