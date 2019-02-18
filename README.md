@@ -7,3 +7,9 @@
 [![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=<git_repository_URL>&branch=<git_branch>)
 
 Deploy credits private blockchain to cloud
+
+
+After deploy
+1. ssh to MySignal1
+2. export ANSIBLE_HOST_KEY_CHECKING=False
+
