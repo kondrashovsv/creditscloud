@@ -481,7 +481,7 @@
               ]
             },
             "protectedSettings": {
-              "commandToExecute": "sudo sh script.sh"
+              "commandToExecute": "[concat('sudo sh script.sh ',' ', parameters('adminUsername'), ' ', parameters('adminPasswordOrKey'))]"
             }
           }
         }
