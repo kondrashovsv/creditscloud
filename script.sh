@@ -2,11 +2,11 @@
 
 # Install ansible
 sudo apt update
-sudo apt upgrade
+sudo apt -y upgrade
 sudo apt install software-properties-common
 sudo apt-add-repository ppa:ansible/ansible
 sudo apt update
-sudo apt install git ansible python-netaddr
+sudo apt -y install git ansible python-netaddr
 mkdir dev
 cd /dev/
 git clone https://gitlab.com/SK81/credits-ansible.git
