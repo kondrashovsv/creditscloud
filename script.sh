@@ -13,7 +13,6 @@ git clone https://gitlab.com/SK81/credits-ansible.git
 cd credits-ansible
 
 echo "[nodes]" > production
-echo "MyNode1 ansible_host=mynode1 ansible_connection=ssh ansible_user={{vault_user}} ansible_ssh_pass={{vault_pass}}" >> production
 echo "MyNode2 ansible_host=mynode2 ansible_connection=ssh ansible_user={{vault_user}} ansible_ssh_pass={{vault_pass}}" >> production
 echo "MyNode3 ansible_host=mynode3 ansible_connection=ssh ansible_user={{vault_user}} ansible_ssh_pass={{vault_pass}}" >> production
 echo "MyNode4 ansible_host=mynode4 ansible_connection=ssh ansible_user={{vault_user}} ansible_ssh_pass={{vault_pass}}" >> production
