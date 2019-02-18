@@ -11,5 +11,6 @@ Deploy credits private blockchain to cloud
 
 After deploy
 1. ssh to MySignal1
-2. export ANSIBLE_HOST_KEY_CHECKING=False
+2. $ export ANSIBLE_HOST_KEY_CHECKING=False
+3. $ ansible-playbook -i production  --ask-vault-pass -e @group_vars/vault.yml site.yml
 
