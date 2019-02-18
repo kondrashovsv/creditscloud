@@ -17,5 +17,5 @@ echo "MyNode2 ansible_host=mynode2 ansible_connection=ssh ansible_user={{vault_u
 echo "MyNode3 ansible_host=mynode3 ansible_connection=ssh ansible_user={{vault_user}} ansible_ssh_pass={{vault_pass}}" >> production
 echo "MyNode4 ansible_host=mynode4 ansible_connection=ssh ansible_user={{vault_user}} ansible_ssh_pass={{vault_pass}}" >> production
 echo "MyNode5 ansible_host=mynode5 ansible_connection=ssh ansible_user={{vault_user}} ansible_ssh_pass={{vault_pass}}" >> production
-echo "[signals]" >> test.test
+echo "[signals]" >> production
 echo "MySignal1 ansible_host=localhost ansible_connection=ssh ansible_user={{vault_user}} ansible_ssh_pass={{vault_pass}}" >> production
