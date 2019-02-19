@@ -80,7 +80,7 @@
     "vmName4": "MyNode3",
     "vmName5": "MyNode4",
     "vmName6": "MyNode5",	
-    "vmSize": "Standard_A2",
+    "vmSize": "Standard_D1_v2",
     "virtualNetworkName": "MyVNET",
     "linuxConfiguration": {
       "disablePasswordAuthentication": true,
