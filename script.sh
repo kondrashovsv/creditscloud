@@ -10,6 +10,7 @@ sudo apt -y install git ansible python-netaddr
 mkdir /tmp/dev
 cd /tmp/dev/
 git clone https://gitlab.com/SK81/credits-ansible.git
+sudo chown -R $1:$1 /tmp/dev/credits-ansible
 cd credits-ansible
 
 echo "[nodes]" > production
@@ -26,3 +27,8 @@ echo "[nodes:vars]" >> production
 echo "ansible_python_interpreter=/usr/bin/python3" >> production
 echo "[signals]" >> production
 echo "MySignal1 ansible_host=localhost ansible_connection=ssh ansible_user=$1 ansible_ssh_pass=$2" >> production
+
+echo "export ANSIBLE_HOST_KEY_CHECKING=False" > start.sh
+echo "ansible-playbook -i production site.yml" >> start.sh
+
+sudo chmod +x /tmp/dev/credits-ansible/start.sh
