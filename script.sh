@@ -22,9 +22,14 @@ echo "MyNode1 ansible_host=mynode1 ansible_connection=ssh ansible_user=$1 ansibl
 echo "MyNode2 ansible_host=mynode2 ansible_connection=ssh ansible_user=$1 ansible_ssh_pass=$2" >> production
 echo "MyNode3 ansible_host=mynode3 ansible_connection=ssh ansible_user=$1 ansible_ssh_pass=$2" >> production
 echo "MyNode4 ansible_host=mynode4 ansible_connection=ssh ansible_user=$1 ansible_ssh_pass=$2" >> production
-echo "MyNode5 ansible_host=mynode5 ansible_connection=ssh ansible_user=$1 ansible_ssh_pass=$2" >> production
 echo "[nodes:vars]" >> production
 echo "ansible_python_interpreter=/usr/bin/python3" >> production
+
+echo "[monitors]" >> production
+echo "MyNode5 ansible_host=mynode5 ansible_connection=ssh ansible_user=$1 ansible_ssh_pass=$2" >> production
+echo "[monitors:vars]" >> production
+echo "ansible_python_interpreter=/usr/bin/python3" >> production
+
 echo "[signals]" >> production
 echo "MySignal1 ansible_host=localhost ansible_connection=ssh ansible_user=$1 ansible_ssh_pass=$2" >> production
 
