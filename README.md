@@ -11,7 +11,7 @@ Deploy credits private blockchain to cloud
 
 
 After deploy
-1. ssh to MySignal1
-2. $ cd /tmp/dev
+1. ssh to MySignal1 IP
+2. $ cd /tmp/dev/credits-ansible
 3. $ ./start.sh
 
